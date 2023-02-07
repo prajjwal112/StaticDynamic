@@ -1,0 +1,97 @@
+<!-- <mat-toolbar color="default">
+    <button mat-icon-button  matTooltip="Menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>ConcretePage.com</span>
+    
+    <span class="toolbar-item-spacer"></span>
+    <button mat-icon-button matTooltip="Like">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Share">
+        <mat-icon>share</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Notifications">
+        <mat-icon>notifications</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="My Account" [matMenuTriggerFor]="userAccountMenu">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #userAccountMenu [overlapTrigger]="false" yPosition="below">
+        <button mat-menu-item routerLink="#">
+            <mat-icon>person</mat-icon><span>My Account</span>
+        </button>
+        <button mat-menu-item routerLink="#">
+            <mat-icon>settings</mat-icon><span>Settings</span>
+        </button>
+        <button mat-menu-item routerLink="#">
+            <mat-icon>help</mat-icon><span>Help</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item routerLink="#">
+            <mat-icon>exit_to_app</mat-icon>Logout
+        </button>
+    </mat-menu>
+
+    
+    
+<ngl-tabset >
+    <ng-template ngl-tab label="Overview">You have {{details.length}} details.</ng-template>
+    <ngl-tab *ngFor="let detail of details" >
+      <ng-template ngl-tab-label>Detail <i>{{ detail }}</i></ng-template>
+      <ng-template ngl-tab-content>
+        <p>Some detail text for <b>{{detail}}</b>.</p>
+        <button type="button" nglButton variant="destructive">Remove</button>
+      </ng-template>
+    </ngl-tab>
+    <ng-template #heading>Summary</ng-template>
+    <ng-template id="sum" ngl-tab #summaryTab="nglTab" [label]="heading">Next last ID is {{id}}.</ng-template>
+  </ngl-tabset>
+  <div class="slds-m-top_large">
+    <button type="button" nglButton variant="brand">Add Detail</button>
+    <button type="button" nglButton>Toggle scope</button>
+    <button type="button" nglButton>Show Summary</button>
+  </div>
+</mat-toolbar> -->
+<div class="toolbar-container">
+    <!-- <button mat-icon-button  matTooltip="Menu">
+        <mat-icon>menu</mat-icon>
+    </button> -->
+<ngl-tabset [(selected)]="selectedTab" variant="scoped">
+    <!-- HOME TAB -->
+    <ng-template ngl-tab label="Home">
+        <div class="home-content-container">
+            <div class="actions common">
+                <button type="button" nglButton iconName="utility:save" variant="success">Save Changes</button>
+                <button class="common-btn" type="button" nglButton iconName="utility:new_direct_message" variant="base">New Project</button>
+                <button class="common-btn" type="button" nglButton iconName="utility:new_direct_message" variant="base">New Version</button>
+            </div>
+            <div class="user-groups common">
+                <button class="common-btn" type="button" nglButton iconName="utility:adduser" variant="base">New User</button>
+                <button class="common-btn" type="button" nglButton iconName="utility:adduser" variant="base">Show Groups</button>
+                <button class="common-btn" type="button" nglButton iconName="utility:adduser" variant="base">Show All Users</button>
+            </div>
+            <div class="sort-filter common">
+                <button class="common-btn" type="button" nglButton iconName="utility:sort" variant="base">Sort</button>
+                
+            </div>
+            <div class="print common">
+                <button class="common-btn" type="button" nglButton iconName="utility:print" variant="base">Print</button>
+                
+            </div>
+        </div>
+    </ng-template>
+    <ng-template ngl-tab label="Database">Db on the way</ng-template>
+    <ng-template ngl-tab label="Edit">Editing....</ng-template>
+    <ngl-tab *ngFor="let detail of details" (activate)="tabChange(detail, 'active')" (deactivate)="tabChange(detail, 'inactive')">
+      <ng-template ngl-tab-label>Detail <i>{{ detail }}</i></ng-template>
+      <ng-template ngl-tab-content>
+        <p>Some detail text for <b>{{detail}}</b>.</p>
+        <button type="button" nglButton variant="destructive" (click)="removeDetail(detail)">Remove</button>
+      </ng-template>
+    </ngl-tab>
+    <!-- <ng-template #heading>Edit</ng-template>
+    <ng-template id="sum" ngl-tab #summaryTab="nglTab" [label]="heading">Next last ID is {{id}}.</ng-template> -->
+  </ngl-tabset>
+</div>
+  

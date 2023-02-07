@@ -1,0 +1,3 @@
+<ng-container *ngIf="orders$ | async as ordersList">
+    <a (click)="onMenuClick(order)" *ngFor="let order of ordersList" mat-list-item>{{order.orderNo}}</a>
+</ng-container>

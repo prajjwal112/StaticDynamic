@@ -1,0 +1,70 @@
+::ng-deep{
+    .mat-tab-header{
+        border-bottom: none;
+    }
+    .mat-toolbar-single-row{
+        min-height: 200px;
+        height: auto;
+        background: white;
+        &>.mat-tab-group{
+            min-width: 88rem;
+            &>.mat-tab-header{
+                &>.mat-tab-label-container{
+                    &>.mat-tab-list{
+                        &>.mat-tab-labels{
+                            & .mat-tab-label{
+                                border-bottom: 2px solid rgba(0,0,0,.12);
+                                width: 22rem;
+                                &>.mat-tab-label-content{
+                                    font-weight: 600;
+                                }
+                            }
+                            
+                            & .mat-tab-label-active {
+                                border-left: 2px solid rgba(0,0,0,.12);
+                                border-right: 2px solid rgba(0,0,0,.12);
+                                border-bottom: none;
+                                &>.mat-tab-label-content{
+                                    color: #3f51b5;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &>.mat-tab-body-wrapper{
+                background: #f5f5f5;
+                &>.mat-tab-body>.mat-tab-body-content>.mat-tab-group>.mat-tab-header{
+                    &>.mat-tab-label-container{
+                        &>.mat-tab-list{
+                            &>.mat-tab-labels{
+                                border-bottom: 1px solid rgba(0,0,0,.12);
+                                border-left: 1px solid rgba(0,0,0,.12);
+                                border-right: 1px solid rgba(0,0,0,.12);
+                                & .mat-tab-label{
+                                    min-width: 5px !important;
+                                    &>.mat-tab-label-content{
+                                        color: grey;
+                                    }
+                                }
+                                & .mat-tab-label-active {
+                                    &>.mat-tab-label-content{
+                                        color: #3f51b5;
+                                        border-bottom: 2px solid #3f51b5;
+                                        font-weight: 300;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        
+    }
+    
+    .mat-ink-bar{
+        visibility: hidden !important;
+    }
+}

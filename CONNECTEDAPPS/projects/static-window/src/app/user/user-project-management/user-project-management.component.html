@@ -1,0 +1,23 @@
+
+<div class="split-container">
+<as-split>
+    <as-split-area [size]="100">
+      <as-split direction="vertical">
+        <as-split-area [size]="65">
+            <mat-card>
+                <mat-card-content>
+                    <app-user-project-data></app-user-project-data>
+                </mat-card-content>
+              </mat-card>
+        </as-split-area>
+        <as-split-area [size]="35">
+            <mat-card>
+                <mat-card-content>
+                    <app-content-view></app-content-view>
+                </mat-card-content>
+              </mat-card>
+        </as-split-area>
+      </as-split>
+    </as-split-area>
+  </as-split>
+</div>
